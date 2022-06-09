@@ -18,12 +18,6 @@ jobs:
       uses: styfle/cancel-workflow-action@0.4.1
       with:
         access_token: ${{ secrets.gitCIToken }}
-          
-#   - name: Show Env
-#     run: echo --- Env ---$'\n'CI=$CI$'\n'HOME=$HOME$'\n'GITHUB_WORKFLOW=$GITHUB_WORKFLOW$'\n'GITHUB_RUN_NUMBER=$GITHUB_RUN_NUMBER$'\n'GITHUB_ACTION=$GITHUB_ACTION$'\n'GITHUB_ACTIONS=$GITHUB_ACTIONS$'\n'GITHUB_ACTOR=$GITHUB_ACTOR$'\n'GITHUB_REPOSITORY=$GITHUB_REPOSITORY$'\n'GITHUB_EVENT_NAME=$GITHUB_EVENT_NAME$'\n'GITHUB_EVENT_PATH=$GITHUB_EVENT_PATH$'\n'GITHUB_WORKSPACE=$GITHUB_WORKSPACE$'\n'GITHUB_SHA=$GITHUB_SHA$'\n'GITHUB_REF=$GITHUB_REF$'\n'GITHUB_HEAD_REF=$GITHUB_HEAD_REF$'\n'GITHUB_BASE_REF=$GITHUB_BASE_REF
-
-#   - name: Show Context
-#     run: echo --- Context ---$'\n'github.base_ref=${{ github.base_ref }}$'\n'github.head_ref=${{ github.head_ref }}$'\n'github.context.payload.pull_request.title=${{ github.context.payload.pull_request.title }}$'\n'github.event.pull_request=${{ github.event.pull_request }}$'\n'github.event.pull_request.title=${{ github.event.pull_request.title }}
 
     - name: Clone Repo
       uses: actions/checkout@v2
@@ -41,47 +35,6 @@ jobs:
 
 #   - name: Test diff
 #     run: /usr/bin/git diff --name-status remotes/origin/develop..devops/VEGA-3769-github-workflow | cat
-
-    - name: Prepare Log
-      run: printf '```\n' > ending.log
-
-    - name: PR Title Check - Release Tag
-      id: title_version
-      if: always()
-      run: |
-          printf '## No release tag in PR title\nPlease include a release version tag in PR title, e.g. R2.1\n### Output\n```\n' > ci-output-step-title-version.txt
-          ./DevOps/ci/script/check-pr-title.swift '(?=(R(\d+\.)?(\d+\.)?(\*|\d+)))' '${{ github.event.pull_request.title }}' >> ci-output-step-title-version.txt && true || (cat ci-output-step-title-version.txt ending.log >> ci-output-all.txt && (exit 1))
-
-    - name: PR Title Check - Jira Number
-      id: title_jira
-      if: always()
-      run: |
-          printf '## No Jira ticket in PR title\nPlease include a Jira ticket number in PR title, e.g. VEGA-4321\n### Output\n```\n' > ci-output-step-title-jira.txt
-          ./DevOps/ci/script/check-pr-title.swift '(?=((VEGA|VGSUP)-\d+))' '${{ github.event.pull_request.title }}' >> ci-output-step-title-jira.txt && true || (cat ci-output-step-title-jira.txt ending.log >> ci-output-all.txt && (exit 1))
-      
-    # Failure of this step may be acceptable
-    - name: Jira Plugin Check - Only comments naming violation is tolerable
-      id: jira_commit
-      if: always()
-      run: |
-          printf '## Jira plugin check failed\nPlease include a Jira ticket number in branch name and commit messages, e.g. VEGA-4321.\nOnly comments naming violation is tolerable at the moment, but it is still highly recommended to amend or rebase your commit(s).\n### Output\n```\n' > ci-output-step-jira-commit.txt
-          ./DevOps/ci/script/check-jira-github.swift 'VEGA|VGSUP' >> ci-output-step-jira-commit.txt && true || (cat ci-output-step-jira-commit.txt ending.log >> ci-output-all.txt && (exit 1))
-#     continue-on-error: true
-
-#   - name: PR Title Check (Not Working)
-#     run: ./DevOps/ci/script/check-pr-title.swift '((?=(R(\d+\.)?(\d+\.)?(\*|\d+)))(?=(VEGA-\d+)))' '${{ github.event.pull_request.title }}'
-
-#   - name: Checkmarx SAST Scan
-#     uses: checkmarx-ts/checkmarx-github-action@v1.0.0
-#     with:
-#       cxServer: https://cxlilly.checkmarx.net
-#       cxAction: Scan
-#       cxUsername:  ${{ secrets.cxUsername }}
-#       cxPassword: ${{ secrets.cxPassword }}
-#       cxTeam: \CxServer\SP\Lilly\Cirrus
-#       cxExcludeFolders: ./DevOps, ./Documents, ./Lilly*, ./scripts, ./Vega/Pods, ./Vega/fastlane, ./Vega/fastlane, ./Vega/docs, ./Vega/build
-#       cxIncremental: true
-#     cxProject: ${{ secrets.cxProject }}
 
     - name: Pod Integrity Check
       id: pod_integrity
