@@ -4,18 +4,9 @@ on:
  push:
    branches:
      - main
-     - master
-     - release
-     - develop
   pull_request:
     branches:
-      - master
       - main
-      - release
-      - develop
-      - release-nudging-study
-      - release-app-store
-      - release/**
 
 jobs:
   testing:
