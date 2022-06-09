@@ -1,46 +1,163 @@
-name: iOS starter workflow
+name: Vega iOS CI
 
 on:
-  push:
-    branches:
-        - main
+ push:
+   branches:
+     - main
+     - master
+     - release
+     - develop
   pull_request:
     branches:
-        - main
+      - master
+      - main
+      - release
+      - develop
+      - release-nudging-study
+      - release-app-store
+      - release/**
 
 jobs:
-  build:
-    name: Build and Test default scheme using any available iPhone simulator
-    runs-on: macos-latest
+  testing:
+    name: Code Quality Check and Unit Testing
+    runs-on: macOS-11
+    timeout-minutes: 20
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set Default Scheme
-        run: |
-          scheme_list=$(xcodebuild -list -json | tr -d "\n")
-          default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
-          echo $default | cat >default
-          echo Using default scheme: $default
-      - name: Build
-        env:
-          scheme: ${{ 'default' }}
-          platform: ${{ 'iOS Simulator' }}
-        run: |
-          # xcrun xctrace returns via stderr, not the expected stdout (see https://developer.apple.com/forums/thread/663959)
-          device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"`
-          if [ $scheme = default ]; then scheme=$(cat default); fi
-          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
-          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device"
-      - name: Test
-        env:
-          scheme: ${{ 'default' }}
-          platform: ${{ 'iOS Simulator' }}
-        run: |
-          # xcrun xctrace returns via stderr, not the expected stdout (see https://developer.apple.com/forums/thread/663959)
-          device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"`
-          if [ $scheme = default ]; then scheme=$(cat default); fi
-          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
-          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device"
+      
+    - name: Cancel Previous Runs
+      uses: styfle/cancel-workflow-action@0.4.1
+      with:
+        access_token: ${{ secrets.gitCIToken }}
+          
+#   - name: Show Env
+#     run: echo --- Env ---$'\n'CI=$CI$'\n'HOME=$HOME$'\n'GITHUB_WORKFLOW=$GITHUB_WORKFLOW$'\n'GITHUB_RUN_NUMBER=$GITHUB_RUN_NUMBER$'\n'GITHUB_ACTION=$GITHUB_ACTION$'\n'GITHUB_ACTIONS=$GITHUB_ACTIONS$'\n'GITHUB_ACTOR=$GITHUB_ACTOR$'\n'GITHUB_REPOSITORY=$GITHUB_REPOSITORY$'\n'GITHUB_EVENT_NAME=$GITHUB_EVENT_NAME$'\n'GITHUB_EVENT_PATH=$GITHUB_EVENT_PATH$'\n'GITHUB_WORKSPACE=$GITHUB_WORKSPACE$'\n'GITHUB_SHA=$GITHUB_SHA$'\n'GITHUB_REF=$GITHUB_REF$'\n'GITHUB_HEAD_REF=$GITHUB_HEAD_REF$'\n'GITHUB_BASE_REF=$GITHUB_BASE_REF
+
+#   - name: Show Context
+#     run: echo --- Context ---$'\n'github.base_ref=${{ github.base_ref }}$'\n'github.head_ref=${{ github.head_ref }}$'\n'github.context.payload.pull_request.title=${{ github.context.payload.pull_request.title }}$'\n'github.event.pull_request=${{ github.event.pull_request }}$'\n'github.event.pull_request.title=${{ github.event.pull_request.title }}
+
+    - name: Clone Repo
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Fetch Base Ref
+      run: git fetch origin $GITHUB_BASE_REF
+
+#   - name: Show Branches
+#     run: git branch -a
+
+#   - name: Test log
+#     run: git --no-pager log remotes/origin/develop..devops/VEGA-3769-github-workflow
+
+#   - name: Test diff
+#     run: /usr/bin/git diff --name-status remotes/origin/develop..devops/VEGA-3769-github-workflow | cat
+
+    - name: Prepare Log
+      run: printf '```\n' > ending.log
+
+    - name: PR Title Check - Release Tag
+      id: title_version
+      if: always()
+      run: |
+          printf '## No release tag in PR title\nPlease include a release version tag in PR title, e.g. R2.1\n### Output\n```\n' > ci-output-step-title-version.txt
+          ./DevOps/ci/script/check-pr-title.swift '(?=(R(\d+\.)?(\d+\.)?(\*|\d+)))' '${{ github.event.pull_request.title }}' >> ci-output-step-title-version.txt && true || (cat ci-output-step-title-version.txt ending.log >> ci-output-all.txt && (exit 1))
+
+    - name: PR Title Check - Jira Number
+      id: title_jira
+      if: always()
+      run: |
+          printf '## No Jira ticket in PR title\nPlease include a Jira ticket number in PR title, e.g. VEGA-4321\n### Output\n```\n' > ci-output-step-title-jira.txt
+          ./DevOps/ci/script/check-pr-title.swift '(?=((VEGA|VGSUP)-\d+))' '${{ github.event.pull_request.title }}' >> ci-output-step-title-jira.txt && true || (cat ci-output-step-title-jira.txt ending.log >> ci-output-all.txt && (exit 1))
+      
+    # Failure of this step may be acceptable
+    - name: Jira Plugin Check - Only comments naming violation is tolerable
+      id: jira_commit
+      if: always()
+      run: |
+          printf '## Jira plugin check failed\nPlease include a Jira ticket number in branch name and commit messages, e.g. VEGA-4321.\nOnly comments naming violation is tolerable at the moment, but it is still highly recommended to amend or rebase your commit(s).\n### Output\n```\n' > ci-output-step-jira-commit.txt
+          ./DevOps/ci/script/check-jira-github.swift 'VEGA|VGSUP' >> ci-output-step-jira-commit.txt && true || (cat ci-output-step-jira-commit.txt ending.log >> ci-output-all.txt && (exit 1))
+#     continue-on-error: true
+
+#   - name: PR Title Check (Not Working)
+#     run: ./DevOps/ci/script/check-pr-title.swift '((?=(R(\d+\.)?(\d+\.)?(\*|\d+)))(?=(VEGA-\d+)))' '${{ github.event.pull_request.title }}'
+
+#   - name: Checkmarx SAST Scan
+#     uses: checkmarx-ts/checkmarx-github-action@v1.0.0
+#     with:
+#       cxServer: https://cxlilly.checkmarx.net
+#       cxAction: Scan
+#       cxUsername:  ${{ secrets.cxUsername }}
+#       cxPassword: ${{ secrets.cxPassword }}
+#       cxTeam: \CxServer\SP\Lilly\Cirrus
+#       cxExcludeFolders: ./DevOps, ./Documents, ./Lilly*, ./scripts, ./Vega/Pods, ./Vega/fastlane, ./Vega/fastlane, ./Vega/docs, ./Vega/build
+#       cxIncremental: true
+#     cxProject: ${{ secrets.cxProject }}
+
+    - name: Pod Integrity Check
+      id: pod_integrity
+      if: always()
+      run: |
+          printf '## Pod integrity check failed\nDo not commit local changes to Pods directory.\n### Output\n```\n' > ci-output-step-pod-integrity.txt
+          ./DevOps/ci/script/check-pods-integrity.swift Vega >> ci-output-step-pod-integrity.txt && true || (cat ci-output-step-pod-integrity.txt ending.log >> ci-output-all.txt && (exit 1))
+
+    - name: Setup Build Environment
+      if: always()
+      run: |
+          sudo xcode-select -s /Applications/Xcode_13.2.1.app
+          brew install groovy
+          brew install xmlstarlet
+
+    - name: SwiftFormat Lint
+      id: swiftformat_lint
+      if: always()
+      run: |
+          printf '## SwiftFormat failed\nUnit tests also apply SwiftFormat, please test your code.\n' > ci-output-step-swiftformat.txt
+          Vega/Pods/SwiftFormat/CommandLineTool/swiftformat ./Vega/ --exclude Vega/Pods --swiftversion 5.0.1 --wraparguments before-first --wrapcollections before-first --importgrouping testable-bottom --lint >> ci-output-step-swiftformat.txt && true || (cat ci-output-step-swiftformat.txt >> ci-output-all.txt && (exit 1))
+
+#   - name: Install SwiftLint
+#     run: brew install swiftlint
+
+    - name: Fastlane SwiftLint
+      id: fastlane_swiftlint
+      working-directory: ./Vega
+      if: always()
+      run: |
+          if ! fastlane lint --env config; then
+              printf '## SwiftLint failed\n' > ci-output-step-swiftlint.txt
+              groovy ../DevOps/ci/script/report-add-summary.groovy lint >> ci-output-step-swiftlint.txt
+              printf '### Output\n```\n' >> ci-output-step-swiftlint.txt
+              groovy ../DevOps/ci/script/report-filter-result.groovy lint >> ci-output-step-swiftlint.txt
+              cat ci-output-step-swiftlint.txt ../ending.log >> ../ci-output-all.txt
+              (exit 1)
+          fi
+
+    - name: Unit Tests
+      id: unit_test
+      working-directory: ./Vega
+      if: always()
+      run: |
+          if ! fastlane tests --env config ; then
+              printf '## Unit test failed\n' > ci-output-step-unit-test.txt
+              groovy ../DevOps/ci/script/report-add-summary.groovy test >> ci-output-step-unit-test.txt
+              printf '### Output\n```\n' >> ci-output-step-unit-test.txt
+              groovy ../DevOps/ci/script/report-filter-result.groovy test >> ci-output-step-unit-test.txt
+              cat ci-output-step-unit-test.txt ../ending.log >> ../ci-output-all.txt
+              (exit 1)
+          fi
+      timeout-minutes: 18
+
+    - name: Output
+      if: failure()
+      run: |
+          ls -l
+          ls -ltr *txt | awk '{print $9}' | xargs head
+          c=`cat <<EOF
+          import json
+          with open("./ci-output-all.txt") as f:
+            comment = f.read()
+          with open("./ci-output-all.json", "w") as f:
+            json.dump({"body": comment}, f)
+          EOF`
+          python -c "$c"
+          curl -X POST ${{ github.event.pull_request.comments_url }} -H "Content-Type: application/json" -H "Authorization: token ${{ secrets.gitCIToken }}" --data-binary '@ci-output-all.json'

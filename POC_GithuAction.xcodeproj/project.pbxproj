@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1548757239730C21B99F1C9E /* Pods_POC_GithuActionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9A84A79F4A9CECEEA59132 /* Pods_POC_GithuActionTests.framework */; };
 		2FB0027D283CA14B0005D4C4 /* POC_GithuActionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB0027C283CA14B0005D4C4 /* POC_GithuActionApp.swift */; };
 		2FB0027F283CA14B0005D4C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB0027E283CA14B0005D4C4 /* ContentView.swift */; };
 		2FB00281283CA1550005D4C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FB00280283CA1550005D4C4 /* Assets.xcassets */; };
@@ -15,6 +16,8 @@
 		2FB00298283CA1550005D4C4 /* POC_GithuActionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB00297283CA1550005D4C4 /* POC_GithuActionUITests.swift */; };
 		2FB0029A283CA1550005D4C4 /* POC_GithuActionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB00299283CA1550005D4C4 /* POC_GithuActionUITestsLaunchTests.swift */; };
 		2FB002A9283CBB8A0005D4C4 /* ios.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2FB002A8283CBB8A0005D4C4 /* ios.yml */; };
+		3918F67E1FFBD4EB309FA94D /* Pods_POC_GithuAction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826C68D92528C98E39719D1C /* Pods_POC_GithuAction.framework */; };
+		9E724FE207BBC104389A7E21 /* Pods_POC_GithuAction_POC_GithuActionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69701D98844FE1E5A676A5BB /* Pods_POC_GithuAction_POC_GithuActionUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03592CFC053E44D4744D9808 /* Pods-POC_GithuAction-POC_GithuActionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POC_GithuAction-POC_GithuActionUITests.debug.xcconfig"; path = "Target Support Files/Pods-POC_GithuAction-POC_GithuActionUITests/Pods-POC_GithuAction-POC_GithuActionUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2106B3AD305CA8B0E87CF007 /* Pods-POC_GithuAction-POC_GithuActionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POC_GithuAction-POC_GithuActionUITests.release.xcconfig"; path = "Target Support Files/Pods-POC_GithuAction-POC_GithuActionUITests/Pods-POC_GithuAction-POC_GithuActionUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2FB00279283CA14B0005D4C4 /* POC_GithuAction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POC_GithuAction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB0027C283CA14B0005D4C4 /* POC_GithuActionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POC_GithuActionApp.swift; sourceTree = "<group>"; };
 		2FB0027E283CA14B0005D4C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +51,13 @@
 		2FB00297283CA1550005D4C4 /* POC_GithuActionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POC_GithuActionUITests.swift; sourceTree = "<group>"; };
 		2FB00299283CA1550005D4C4 /* POC_GithuActionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POC_GithuActionUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2FB002A8283CBB8A0005D4C4 /* ios.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = ios.yml; sourceTree = "<group>"; };
+		3712886091F872ACB0360B18 /* Pods-POC_GithuActionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POC_GithuActionTests.release.xcconfig"; path = "Target Support Files/Pods-POC_GithuActionTests/Pods-POC_GithuActionTests.release.xcconfig"; sourceTree = "<group>"; };
+		69701D98844FE1E5A676A5BB /* Pods_POC_GithuAction_POC_GithuActionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POC_GithuAction_POC_GithuActionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7491EB4EF81587C259D78DBD /* Pods-POC_GithuAction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POC_GithuAction.release.xcconfig"; path = "Target Support Files/Pods-POC_GithuAction/Pods-POC_GithuAction.release.xcconfig"; sourceTree = "<group>"; };
+		826C68D92528C98E39719D1C /* Pods_POC_GithuAction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POC_GithuAction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9050EDA13F9AC3DE15B5B2AC /* Pods-POC_GithuAction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POC_GithuAction.debug.xcconfig"; path = "Target Support Files/Pods-POC_GithuAction/Pods-POC_GithuAction.debug.xcconfig"; sourceTree = "<group>"; };
+		CA9A84A79F4A9CECEEA59132 /* Pods_POC_GithuActionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POC_GithuActionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E77DE2AB958E31F9F999B703 /* Pods-POC_GithuActionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POC_GithuActionTests.debug.xcconfig"; path = "Target Support Files/Pods-POC_GithuActionTests/Pods-POC_GithuActionTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3918F67E1FFBD4EB309FA94D /* Pods_POC_GithuAction.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1548757239730C21B99F1C9E /* Pods_POC_GithuActionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E724FE207BBC104389A7E21 /* Pods_POC_GithuAction_POC_GithuActionUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +96,8 @@
 				2FB0028C283CA1550005D4C4 /* POC_GithuActionTests */,
 				2FB00296283CA1550005D4C4 /* POC_GithuActionUITests */,
 				2FB0027A283CA14B0005D4C4 /* Products */,
+				4EE0303ED563FA6D2C46CCED /* Pods */,
+				8902119335C42A008DDE491A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +163,30 @@
 			path = workflows;
 			sourceTree = "<group>";
 		};
+		4EE0303ED563FA6D2C46CCED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9050EDA13F9AC3DE15B5B2AC /* Pods-POC_GithuAction.debug.xcconfig */,
+				7491EB4EF81587C259D78DBD /* Pods-POC_GithuAction.release.xcconfig */,
+				03592CFC053E44D4744D9808 /* Pods-POC_GithuAction-POC_GithuActionUITests.debug.xcconfig */,
+				2106B3AD305CA8B0E87CF007 /* Pods-POC_GithuAction-POC_GithuActionUITests.release.xcconfig */,
+				E77DE2AB958E31F9F999B703 /* Pods-POC_GithuActionTests.debug.xcconfig */,
+				3712886091F872ACB0360B18 /* Pods-POC_GithuActionTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8902119335C42A008DDE491A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				826C68D92528C98E39719D1C /* Pods_POC_GithuAction.framework */,
+				69701D98844FE1E5A676A5BB /* Pods_POC_GithuAction_POC_GithuActionUITests.framework */,
+				CA9A84A79F4A9CECEEA59132 /* Pods_POC_GithuActionTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FB0029D283CA1550005D4C4 /* Build configuration list for PBXNativeTarget "POC_GithuAction" */;
 			buildPhases = (
+				25AF5ADBAF38F9794EFF832A /* [CP] Check Pods Manifest.lock */,
 				2FB00275283CA14B0005D4C4 /* Sources */,
 				2FB00276283CA14B0005D4C4 /* Frameworks */,
 				2FB00277283CA14B0005D4C4 /* Resources */,
@@ -170,6 +212,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FB002A0283CA1550005D4C4 /* Build configuration list for PBXNativeTarget "POC_GithuActionTests" */;
 			buildPhases = (
+				04A8860B1AA863628A41E3C7 /* [CP] Check Pods Manifest.lock */,
 				2FB00285283CA1550005D4C4 /* Sources */,
 				2FB00286283CA1550005D4C4 /* Frameworks */,
 				2FB00287283CA1550005D4C4 /* Resources */,
@@ -188,6 +231,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FB002A3283CA1550005D4C4 /* Build configuration list for PBXNativeTarget "POC_GithuActionUITests" */;
 			buildPhases = (
+				D09BCD587A8AE26C6F74D536 /* [CP] Check Pods Manifest.lock */,
 				2FB0028F283CA1550005D4C4 /* Sources */,
 				2FB00290283CA1550005D4C4 /* Frameworks */,
 				2FB00291283CA1550005D4C4 /* Resources */,
@@ -271,6 +315,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04A8860B1AA863628A41E3C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-POC_GithuActionTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25AF5ADBAF38F9794EFF832A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-POC_GithuAction-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D09BCD587A8AE26C6F74D536 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-POC_GithuAction-POC_GithuActionUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2FB00275283CA14B0005D4C4 /* Sources */ = {
@@ -431,6 +544,7 @@
 		};
 		2FB0029E283CA1550005D4C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9050EDA13F9AC3DE15B5B2AC /* Pods-POC_GithuAction.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -459,6 +573,7 @@
 		};
 		2FB0029F283CA1550005D4C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7491EB4EF81587C259D78DBD /* Pods-POC_GithuAction.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -487,6 +602,7 @@
 		};
 		2FB002A1283CA1550005D4C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E77DE2AB958E31F9F999B703 /* Pods-POC_GithuActionTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +622,7 @@
 		};
 		2FB002A2283CA1550005D4C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3712886091F872ACB0360B18 /* Pods-POC_GithuActionTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -525,6 +642,7 @@
 		};
 		2FB002A4283CA1550005D4C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03592CFC053E44D4744D9808 /* Pods-POC_GithuAction-POC_GithuActionUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -542,6 +660,7 @@
 		};
 		2FB002A5283CA1550005D4C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2106B3AD305CA8B0E87CF007 /* Pods-POC_GithuAction-POC_GithuActionUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
