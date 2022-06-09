@@ -1,13 +1,11 @@
-name: Vega iOS CI
-
+name: Sample POC iOS CI
 on:
- push:
-   branches:
-     - main
-  pull_request:
-    branches:
-      - main
-
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
 jobs:
   testing:
     name: Code Quality Check and Unit Testing
