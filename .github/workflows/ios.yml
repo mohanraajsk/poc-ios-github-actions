@@ -31,17 +31,17 @@ jobs:
 #     run: git branch -a
 
 #   - name: Test log
-#     run: git --no-pager log remotes/origin/develop..devops/VEGA-3769-github-workflow
+#     run: git --no-pager log remotes/origin/develop..devops/POC_GithuAction-3769-github-workflow
 
 #   - name: Test diff
-#     run: /usr/bin/git diff --name-status remotes/origin/develop..devops/VEGA-3769-github-workflow | cat
+#     run: /usr/bin/git diff --name-status remotes/origin/develop..devops/POC_GithuAction-3769-github-workflow | cat
 
     - name: Pod Integrity Check
       id: pod_integrity
       if: always()
       run: |
           printf '## Pod integrity check failed\nDo not commit local changes to Pods directory.\n### Output\n```\n' > ci-output-step-pod-integrity.txt
-          ./DevOps/ci/script/check-pods-integrity.swift Vega >> ci-output-step-pod-integrity.txt && true || (cat ci-output-step-pod-integrity.txt ending.log >> ci-output-all.txt && (exit 1))
+          ./DevOps/ci/script/check-pods-integrity.swift POC_GithuAction >> ci-output-step-pod-integrity.txt && true || (cat ci-output-step-pod-integrity.txt ending.log >> ci-output-all.txt && (exit 1))
 
     - name: Setup Build Environment
       if: always()
@@ -55,14 +55,14 @@ jobs:
       if: always()
       run: |
           printf '## SwiftFormat failed\nUnit tests also apply SwiftFormat, please test your code.\n' > ci-output-step-swiftformat.txt
-          Vega/Pods/SwiftFormat/CommandLineTool/swiftformat ./Vega/ --exclude Vega/Pods --swiftversion 5.0.1 --wraparguments before-first --wrapcollections before-first --importgrouping testable-bottom --lint >> ci-output-step-swiftformat.txt && true || (cat ci-output-step-swiftformat.txt >> ci-output-all.txt && (exit 1))
+          POC_GithuAction/Pods/SwiftFormat/CommandLineTool/swiftformat ./POC_GithuAction/ --exclude POC_GithuAction/Pods --swiftversion 5.0.1 --wraparguments before-first --wrapcollections before-first --importgrouping testable-bottom --lint >> ci-output-step-swiftformat.txt && true || (cat ci-output-step-swiftformat.txt >> ci-output-all.txt && (exit 1))
 
 #   - name: Install SwiftLint
 #     run: brew install swiftlint
 
     - name: Fastlane SwiftLint
       id: fastlane_swiftlint
-      working-directory: ./Vega
+      working-directory: ./POC_GithuAction
       if: always()
       run: |
           if ! fastlane lint --env config; then
@@ -76,7 +76,7 @@ jobs:
 
     - name: Unit Tests
       id: unit_test
-      working-directory: ./Vega
+      working-directory: ./POC_GithuAction
       if: always()
       run: |
           if ! fastlane tests --env config ; then
