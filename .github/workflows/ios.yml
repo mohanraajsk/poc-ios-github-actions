@@ -1,105 +1,20 @@
-name: Sample POC iOS CI
+name: CI
+
 on:
-    push:
-        branches:
-            - main
-    pull_request:
-        branches:
-            - main
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
-  testing:
-    name: Code Quality Check and Unit Testing
-    runs-on: macOS-11
-    timeout-minutes: 20
+  build-and-test:
+    runs-on: macos-latest
 
     steps:
-      
-    - name: Cancel Previous Runs
-      uses: styfle/cancel-workflow-action@0.4.1
-      with:
-        access_token: ${{ secrets.gitCIToken }}
+    - uses: actions/checkout@v2
 
-    - name: Clone Repo
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode.app
 
-    - name: Fetch Base Ref
-      run: git fetch origin $GITHUB_BASE_REF
-
-#   - name: Show Branches
-#     run: git branch -a
-
-#   - name: Test log
-#     run: git --no-pager log remotes/origin/develop..devops/POC_GithuAction-3769-github-workflow
-
-#   - name: Test diff
-#     run: /usr/bin/git diff --name-status remotes/origin/develop..devops/POC_GithuAction-3769-github-workflow | cat
-
-    - name: Pod Integrity Check
-      id: pod_integrity
-      if: always()
-      run: |
-          printf '## Pod integrity check failed\nDo not commit local changes to Pods directory.\n### Output\n```\n' > ci-output-step-pod-integrity.txt
-          ./DevOps/ci/script/check-pods-integrity.swift POC_GithuAction >> ci-output-step-pod-integrity.txt && true || (cat ci-output-step-pod-integrity.txt ending.log >> ci-output-all.txt && (exit 1))
-
-    - name: Setup Build Environment
-      if: always()
-      run: |
-          sudo xcode-select -s /Applications/Xcode_13.2.1.app
-          brew install groovy
-          brew install xmlstarlet
-
-    - name: SwiftFormat Lint
-      id: swiftformat_lint
-      if: always()
-      run: |
-          printf '## SwiftFormat failed\nUnit tests also apply SwiftFormat, please test your code.\n' > ci-output-step-swiftformat.txt
-          POC_GithuAction/Pods/SwiftFormat/CommandLineTool/swiftformat ./POC_GithuAction/ --exclude POC_GithuAction/Pods --swiftversion 5.0.1 --wraparguments before-first --wrapcollections before-first --importgrouping testable-bottom --lint >> ci-output-step-swiftformat.txt && true || (cat ci-output-step-swiftformat.txt >> ci-output-all.txt && (exit 1))
-
-#   - name: Install SwiftLint
-#     run: brew install swiftlint
-
-    - name: Fastlane SwiftLint
-      id: fastlane_swiftlint
-      working-directory: ./POC_GithuAction
-      if: always()
-      run: |
-          if ! fastlane lint --env config; then
-              printf '## SwiftLint failed\n' > ci-output-step-swiftlint.txt
-              groovy ../DevOps/ci/script/report-add-summary.groovy lint >> ci-output-step-swiftlint.txt
-              printf '### Output\n```\n' >> ci-output-step-swiftlint.txt
-              groovy ../DevOps/ci/script/report-filter-result.groovy lint >> ci-output-step-swiftlint.txt
-              cat ci-output-step-swiftlint.txt ../ending.log >> ../ci-output-all.txt
-              (exit 1)
-          fi
-
-    - name: Unit Tests
-      id: unit_test
-      working-directory: ./POC_GithuAction
-      if: always()
-      run: |
-          if ! fastlane tests --env config ; then
-              printf '## Unit test failed\n' > ci-output-step-unit-test.txt
-              groovy ../DevOps/ci/script/report-add-summary.groovy test >> ci-output-step-unit-test.txt
-              printf '### Output\n```\n' >> ci-output-step-unit-test.txt
-              groovy ../DevOps/ci/script/report-filter-result.groovy test >> ci-output-step-unit-test.txt
-              cat ci-output-step-unit-test.txt ../ending.log >> ../ci-output-all.txt
-              (exit 1)
-          fi
-      timeout-minutes: 18
-
-    - name: Output
-      if: failure()
-      run: |
-          ls -l
-          ls -ltr *txt | awk '{print $9}' | xargs head
-          c=`cat <<EOF
-          import json
-          with open("./ci-output-all.txt") as f:
-            comment = f.read()
-          with open("./ci-output-all.json", "w") as f:
-            json.dump({"body": comment}, f)
-          EOF`
-          python -c "$c"
-          curl -X POST ${{ github.event.pull_request.comments_url }} -H "Content-Type: application/json" -H "Authorization: token ${{ secrets.gitCIToken }}" --data-binary '@ci-output-all.json'
+    - name: Build and test
+      run: xcodebuild clean build test -workspace App/QuizApp.xcworkspace -scheme "CI" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
