@@ -21,10 +21,14 @@ jobs:
       
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode.app
-       
-    - name: Install Dependencies
-      run: pod install
-      shell: bash
       
-    - name: Build and test
-      run: xcodebuild clean build test -workspace POC_GithuAction.xcworkspace -scheme "POC_GithuAction" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
+    - name: Install gpg
+        run: |
+            echo "name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//_/g')" >> $GITHUB_ENV
+       
+#    - name: Install Dependencies
+#      run: pod install
+#      shell: bash
+      
+#    - name: Build and test
+#      run: xcodebuild clean build test -workspace POC_GithuAction.xcworkspace -scheme "POC_GithuAction" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
