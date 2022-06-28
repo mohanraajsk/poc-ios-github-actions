@@ -23,8 +23,7 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode.app
       
     - name: Install gpg
-        run: |
-            echo "name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//_/g')" >> $GITHUB_ENV
+        run: echo "name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//_/g')" >> $GITHUB_ENV
        
 #    - name: Install Dependencies
 #      run: pod install
