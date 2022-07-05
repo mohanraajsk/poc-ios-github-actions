@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  call-workflow-passing-data:
+  call-workflow:
     uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedAction.yml@main
     with:
       targetName: POC_GithuAction.xcworkspace
