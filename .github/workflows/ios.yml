@@ -10,4 +10,5 @@ jobs:
   call-workflow:
     uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedAction.yml@main
     with:
-      targetName: POC_GithuAction.xcworkspace
+      targetName: POC_GithuAction
+      workspaceName: POC_GithuAction.xcworkspace
