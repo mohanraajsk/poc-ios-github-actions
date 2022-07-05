@@ -1,4 +1,4 @@
-name: CI With generic reusable
+name: CI With generic reusable script
 
 on:
   push:
