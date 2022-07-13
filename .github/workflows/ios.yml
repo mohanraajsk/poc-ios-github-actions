@@ -8,7 +8,9 @@ on:
 
 jobs:
   call-workflow:
+    name: Build and Test
     uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedAction.yml@main
     with:
       targetName: POC_GithuAction
       workspaceName: POC_GithuAction.xcworkspace
+
