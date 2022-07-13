@@ -6,14 +6,13 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
-      branches: [ main ]
       inputs:
         targetName:
-        required: true
         type: string
+        required: true
       workspaceName:
-        required: true
         type: string
+        required: true
 
 jobs:
   call-workflow:
