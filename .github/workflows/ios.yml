@@ -1,4 +1,4 @@
-name: CI/CD With generic reusable script with pod cache and linting
+name: CI/CD With generic reusable script
 
 on:
   push:
