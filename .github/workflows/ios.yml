@@ -1,4 +1,4 @@
-name: CI/CD With generic reusable script without lint
+name: CI/CD With generic reusable script with buils and test
 
 on:
   push:
