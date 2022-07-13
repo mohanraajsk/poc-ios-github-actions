@@ -1,10 +1,13 @@
-name: CI/CD With generic reusable script with pod cache and linting
+name: CI/CD With generic reusable script with pod cache and linting.
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
+      branches: [ main ]
+
 
 jobs:
   call-workflow:
