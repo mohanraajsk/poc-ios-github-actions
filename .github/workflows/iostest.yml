@@ -1,10 +1,10 @@
 name: TEST CI/CD With generic reusable script with buils and test.
 
 on:
-#  push:
-#    branches: [ main ]
-#  pull_request:
-#    branches: [ main ]
+  push:
+    branches: [ SharedAction ]
+  pull_request:
+    branches: [ SharedAction ]
   workflow_dispatch:
 
 jobs:
