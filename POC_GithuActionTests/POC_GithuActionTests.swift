@@ -10,7 +10,7 @@ import XCTest
 
 class POC_GithuActionTests: XCTestCase {
 
-    var testVariable = 10
+    var testVariable = 10;
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -25,7 +25,7 @@ class POC_GithuActionTests: XCTestCase {
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-        XCTAssertTrue(testVariable == 10)
+        XCTAssertTrue(testVariable == 10);
     }
 
     func testPerformanceExample() throws {
