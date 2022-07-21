@@ -17,7 +17,7 @@ on:
 jobs:
   call-workflow:
     name: Instal dependecy and lint
-    uses: mohanraajsk/POC_Shared_Actions/.github/workflows/LillyDevice_Linting.yml@main
+    uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionLint.yml@main
     with:
       targetName: POC_GithuAction
       workspaceName: POC_GithuAction.xcworkspace
