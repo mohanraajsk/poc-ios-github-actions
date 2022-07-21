@@ -17,10 +17,10 @@ on:
 jobs:
   call-workflow:
     name: Instal dependecy and lint
-    uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedAction.yml@main
-    with:
-      targetName: POC_GithuAction
-      workspaceName: POC_GithuAction.xcworkspace
+    uses: mohanraajsk/POC_Shared_Actions/.github/workflows/LillyDevice_Linting.yml@main
+#    with:
+#      targetName: POC_GithuAction
+#      workspaceName: POC_GithuAction.xcworkspace
       
 #    name: Build
 #    uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionCleanAndBuild.yml@main
