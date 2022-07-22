@@ -5,10 +5,10 @@ on:
     branches: [ main ]
   workflow_dispatch:
     inputs:
-    targetName:
-        type: string
-    workspaceName:
-        type: string
+        targetName:
+            type: string
+        workspaceName:
+            type: string
 
 
 jobs:
