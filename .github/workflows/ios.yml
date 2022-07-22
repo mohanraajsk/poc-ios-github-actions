@@ -22,15 +22,10 @@ jobs:
         with:
           targetName: POC_GithuAction
           workspaceName: POC_GithuAction.xcworkspace
+          
         uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionCleanAndBuild.yml@main
         with:
           targetName: POC_GithuAction
               workspaceName: POC_GithuAction.xcworkspace
-
-#    name: Test application
-#    uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionTesting.yml@main
-#    with:
-#      targetName: POC_GithuAction
-#      workspaceName: POC_GithuAction.xcworkspace
    
 
