@@ -26,6 +26,6 @@ jobs:
         uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionCleanAndBuild.yml@main
         with:
           targetName: POC_GithuAction
-              workspaceName: POC_GithuAction.xcworkspace
+          workspaceName: POC_GithuAction.xcworkspace
    
 
