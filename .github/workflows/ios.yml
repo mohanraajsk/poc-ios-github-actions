@@ -17,16 +17,14 @@ on:
 jobs:
   call-workflow:
     steps:
-        job1:
-            name: Instal dependecy and lint
-            uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionLint.yml@main
-            with:
-              targetName: POC_GithuAction
-              workspaceName: POC_GithuAction.xcworkspace
-        job2:
-            uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionCleanAndBuild.yml@main
-            with:
-              targetName: POC_GithuAction
+        name: Instal dependecy and lint
+        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionLint.yml@main
+        with:
+          targetName: POC_GithuAction
+          workspaceName: POC_GithuAction.xcworkspace
+        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionCleanAndBuild.yml@main
+        with:
+          targetName: POC_GithuAction
               workspaceName: POC_GithuAction.xcworkspace
 
 #    name: Test application
