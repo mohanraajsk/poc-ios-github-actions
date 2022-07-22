@@ -12,24 +12,24 @@ on:
 
 
 jobs:
-    linting:
-        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionLint.yml@main
+    Buid-and-Test:
+        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBuildSharedAction.yml@main
         with:
           targetName: POC_GithuAction
           workspaceName: POC_GithuAction.xcworkspace
       
-    build-app:
-        needs: linting
-        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionCleanAndBuild.yml@main
-        with:
-          targetName: POC_GithuAction
-          workspaceName: POC_GithuAction.xcworkspace
-
-    test-app:
-        needs: build-app
-        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionTesting.yml@main
-        with:
-          targetName: POC_GithuAction
-          workspaceName: POC_GithuAction.xcworkspace
+#    build-app:
+#        needs: linting
+#        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionCleanAndBuild.yml@main
+#        with:
+#          targetName: POC_GithuAction
+#          workspaceName: POC_GithuAction.xcworkspace
+#
+#    test-app:
+#        needs: build-app
+#        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionTesting.yml@main
+#        with:
+#          targetName: POC_GithuAction
+#          workspaceName: POC_GithuAction.xcworkspace
 
 
