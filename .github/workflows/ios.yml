@@ -17,7 +17,6 @@ on:
 jobs:
   call-workflow:
     steps:
-        name: Instal dependecy and lint
         uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionLint.yml@main
         with:
           targetName: POC_GithuAction
