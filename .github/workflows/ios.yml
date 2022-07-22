@@ -1,8 +1,8 @@
 name: CI/CD With generic reusable script with buils and test.
 
 on:
-  push:
-    branches: [ main ]
+#  push:
+#    branches: [ main ]
   workflow_dispatch:
     inputs:
         targetName:
@@ -19,6 +19,7 @@ jobs:
           workspaceName: POC_GithuAction.xcworkspace
       
     build-app:
+        needs: linting
         uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionCleanAndBuild.yml@main
         with:
           targetName: POC_GithuAction
