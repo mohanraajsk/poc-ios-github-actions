@@ -1,16 +1,14 @@
 name: CI/CD With generic reusable script with buils and test.
 
 on:
-#  push:
-#    branches: [ main ]
-#  pull_request:
-#    branches: [ main ]
+  push:
+    branches: [ main ]
   workflow_dispatch:
-        inputs:
-        targetName:
-            type: string
-        workspaceName:
-            type: string
+    inputs:
+    targetName:
+        type: string
+    workspaceName:
+        type: string
 
 
 jobs:
