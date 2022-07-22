@@ -26,6 +26,7 @@ jobs:
           workspaceName: POC_GithuAction.xcworkspace
 
     test-app:
+        needs: build-app
         uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionTesting.yml@main
         with:
           targetName: POC_GithuAction
