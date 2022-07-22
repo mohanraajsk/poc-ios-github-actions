@@ -6,27 +6,25 @@ on:
 #  pull_request:
 #    branches: [ main ]
   workflow_dispatch:
-      inputs:
-        targetName:
-            type: string
-        workspaceName:
-            type: string
-
-  
 
 jobs:
   call-workflow:
-    steps:
-        name: Instal dependecy and lint
-        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionLint.yml@main
-        with:
-          targetName: POC_GithuAction
-          workspaceName: POC_GithuAction.xcworkspace
-        
-        name: Build the application
-        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionCleanAndBuild.yml@main
-        with:
-          targetName: POC_GithuAction
-          workspaceName: POC_GithuAction.xcworkspace
-   
+    name: Instal dependecy and lint
+    uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionLint.yml@main
+    with:
+      targetName: POC_GithuAction
+      workspaceName: POC_GithuAction.xcworkspace
+      
+    name: Build
+    uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionCleanAndBuild.yml@main
+    with:
+      targetName: POC_GithuAction
+      workspaceName: POC_GithuAction.xcworkspace
+
+    name: Test
+    uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionTesting.yml@main
+    with:
+      targetName: POC_GithuAction
+      workspaceName: POC_GithuAction.xcworkspace
+
 
