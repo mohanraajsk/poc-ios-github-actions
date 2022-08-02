@@ -9,16 +9,32 @@ on:
             type: string
         workspaceName:
             type: string
+        accessToken:
+            type: string
 
 
 jobs:
     Buid-and-Test:
-        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedAction.yml@DevOps-Folder-Adding-to-POC-Shared-Actions
+        uses: EliLillyCo/Test_lilly_Shared_Repo/.github/workflows/ios_shared_action_install_dependency.yml@main
         with:
-          targetName: POC_GithuAction
-          workspaceName: POC_GithuAction.xcworkspace
+          targetName: LillyDevice
+          workspaceName: LillyDevice.xcworkspace
+          accessToken: test-token
         secrets: inherit
-      
+        
+        uses: EliLillyCo/Test_lilly_Shared_Repo/.github/workflows/ios_shared_action_lint.yml@main
+        with:
+          targetName: LillyDevice
+          workspaceName: LillyDevice.xcworkspace
+          accessToken: test-token
+        secrets: inherit
+        
+#        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedAction.yml@DevOps-Folder-Adding-to-POC-Shared-Actions
+#        with:
+#          targetName: POC_GithuAction
+#          workspaceName: POC_GithuAction.xcworkspace
+#        secrets: inherit
+        
 #    build-app:
 #        needs: linting
 #        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionCleanAndBuild.yml@main
