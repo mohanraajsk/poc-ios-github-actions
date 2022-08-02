@@ -14,14 +14,14 @@ on:
 
 
 jobs:
-    Buid-and-Test:
+    install-dependency:
         uses: EliLillyCo/Test_lilly_Shared_Repo/.github/workflows/ios_shared_action_install_dependency.yml@main
         with:
           targetName: LillyDevice
           workspaceName: LillyDevice.xcworkspace
           accessToken: test-token
         secrets: inherit
-        
+    linting:
         uses: EliLillyCo/Test_lilly_Shared_Repo/.github/workflows/ios_shared_action_lint.yml@main
         with:
           targetName: LillyDevice
