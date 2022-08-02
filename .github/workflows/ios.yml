@@ -21,13 +21,13 @@ jobs:
           workspaceName: LillyDevice.xcworkspace
           accessToken: test-token
         secrets: inherit
-    linting:
-        uses: EliLillyCo/Test_lilly_Shared_Repo/.github/workflows/ios_shared_action_lint.yml@main
-        with:
-          targetName: LillyDevice
-          workspaceName: LillyDevice.xcworkspace
-          accessToken: test-token
-        secrets: inherit
+#    linting:
+#        uses: EliLillyCo/Test_lilly_Shared_Repo/.github/workflows/ios_shared_action_lint.yml@main
+#        with:
+#          targetName: LillyDevice
+#          workspaceName: LillyDevice.xcworkspace
+#          accessToken: test-token
+#        secrets: inherit
         
 #        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedAction.yml@DevOps-Folder-Adding-to-POC-Shared-Actions
 #        with:
