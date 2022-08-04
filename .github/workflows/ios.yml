@@ -1,27 +1,26 @@
 name: CI/CD With generic reusable script with buils and test.
 
 on:
-#  push:
-#    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
     inputs:
         targetName:
             type: string
         workspaceName:
             type: string
-        accessToken:
-            type: string
 
 
 jobs:
-    install-dependency:
-        uses: EliLillyCo/Test_lilly_Shared_Repo/.github/workflows/ios_shared_action_install_dependency.yml@main
-        with:
-          targetName: LillyDevice
-          workspaceName: LillyDevice.xcworkspace
-          accessToken: test-token
-        secrets: inherit
+#    install-dependency:
+#        uses: EliLillyCo/Test_lilly_Shared_Repo/.github/workflows/ios_shared_action_install_dependency.yml@main
+#        with:
+#          targetName: LillyDevice
+#          workspaceName: LillyDevice.xcworkspace
+#          accessToken: test-token
+#        secrets: inherit
 #    linting:
+#        needs: install-dependency
 #        uses: EliLillyCo/Test_lilly_Shared_Repo/.github/workflows/ios_shared_action_lint.yml@main
 #        with:
 #          targetName: LillyDevice
@@ -48,5 +47,11 @@ jobs:
 #        with:
 #          targetName: POC_GithuAction
 #          workspaceName: POC_GithuAction.xcworkspace
+    artifact:
+        needs: build-app
+        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBuildSharedAction.yml@main
+        with:
+          targetName: POC_GithuAction
+          workspaceName: POC_GithuAction.xcworkspace
 
 
