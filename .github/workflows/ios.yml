@@ -12,13 +12,12 @@ on:
 
 
 jobs:
-#    install-dependency:
-#        uses: EliLillyCo/Test_lilly_Shared_Repo/.github/workflows/ios_shared_action_install_dependency.yml@main
-#        with:
-#          targetName: LillyDevice
-#          workspaceName: LillyDevice.xcworkspace
-#          accessToken: test-token
-#        secrets: inherit
+    install-dependency:
+        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBuildSharedAction.yml@main
+        with:
+          targetName: LillyDevice
+          workspaceName: LillyDevice.xcworkspace
+        secrets: inherit
 #    linting:
 #        needs: install-dependency
 #        uses: EliLillyCo/Test_lilly_Shared_Repo/.github/workflows/ios_shared_action_lint.yml@main
@@ -47,10 +46,10 @@ jobs:
 #        with:
 #          targetName: POC_GithuAction
 #          workspaceName: POC_GithuAction.xcworkspace
-    artifact:
-        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBuildSharedAction.yml@main
-        with:
-          targetName: POC_GithuAction
-          workspaceName: POC_GithuAction.xcworkspace
-
+#     artifact:
+#        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBuildSharedAction.yml@main
+#        with:
+#          targetName: POC_GithuAction
+#          workspaceName: POC_GithuAction.xcworkspace
+#
 
