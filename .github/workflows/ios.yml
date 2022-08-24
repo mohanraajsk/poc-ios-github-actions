@@ -14,7 +14,7 @@ on:
 jobs:
     artifact:
         needs: build-app
-        uses: mohanraajsk/POC_Shared_Actions/iOSBuildSharedAction.yml@main
+        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBuildSharedAction.yml@main
         with:
           targetName: POC_GithuAction
           workspaceName: POC_GithuAction.xcworkspace
