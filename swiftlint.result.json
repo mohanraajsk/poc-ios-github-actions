@@ -1,0 +1,353 @@
+[
+  {
+    "character" : 88,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyTempoSmartButtonIntegrationTests\/Utilities\/TestVariables.swift",
+    "line" : 166,
+    "reason" : "Opening braces should be preceded by a single space and on the same line as the declaration.",
+    "rule_id" : "opening_brace",
+    "severity" : "Error",
+    "type" : "Opening Brace Spacing"
+  },
+  {
+    "character" : 88,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyTempoSmartButtonIntegrationTests\/Utilities\/TestVariables.swift",
+    "line" : 169,
+    "reason" : "Opening braces should be preceded by a single space and on the same line as the declaration.",
+    "rule_id" : "opening_brace",
+    "severity" : "Error",
+    "type" : "Opening Brace Spacing"
+  },
+  {
+    "character" : 47,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyTempoSmartButtonIntegrationTests\/LillyTempoSmartButtonIntegrationTests+Connection.swift",
+    "line" : 139,
+    "reason" : "Unused parameter \"injector\" in a closure should be replaced with _.",
+    "rule_id" : "unused_closure_parameter",
+    "severity" : "Error",
+    "type" : "Unused Closure Parameter"
+  },
+  {
+    "character" : 39,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/Insulin\/InsulinDose.swift",
+    "line" : 325,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 49,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/Insulin\/InsulinDose.swift",
+    "line" : 363,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 54,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/Insulin\/InsulinDose.swift",
+    "line" : 403,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 45,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/Insulin\/InsulinDose.swift",
+    "line" : 416,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 46,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/Insulin\/InsulinDose.swift",
+    "line" : 429,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 33,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/Insulin\/InsulinDoseContext.swift",
+    "line" : 227,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 33,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/Insulin\/InsulinDoseContext.swift",
+    "line" : 246,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 43,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/Insulin\/InsulinDoseContext.swift",
+    "line" : 261,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 44,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/Insulin\/InsulinDoseContext.swift",
+    "line" : 283,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 56,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/Insulin\/InsulinDoseContext.swift",
+    "line" : 327,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 50,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/Insulin\/InsulinDoseContext.swift",
+    "line" : 379,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 33,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/Insulin\/InsulinDoseContext.swift",
+    "line" : 392,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 37,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/Insulin\/InsulinDoseContext.swift",
+    "line" : 405,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 50,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/Insulin\/InsulinDoseContext.swift",
+    "line" : 420,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 39,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/Insulin\/InsulinDoseContext.swift",
+    "line" : 442,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 52,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Devices\/InsulinTransmitter\/TempoSmartButtonTransmitter.swift",
+    "line" : 68,
+    "reason" : "Use `contains` instead",
+    "rule_id" : "reduce_boolean",
+    "severity" : "Error",
+    "type" : "Reduce Boolean"
+  },
+  {
+    "character" : 45,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/BloodGlucose\/BloodGlucoseReadingContext.swift",
+    "line" : 247,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 48,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/BloodGlucose\/BloodGlucoseReadingContext.swift",
+    "line" : 260,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 30,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/BloodGlucose\/BloodGlucoseReadingContext.swift",
+    "line" : 273,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 29,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/BloodGlucose\/BloodGlucoseReadingContext.swift",
+    "line" : 286,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 29,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/BloodGlucose\/BloodGlucoseReadingContext.swift",
+    "line" : 299,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 39,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/BloodGlucose\/BloodGlucoseReadingContext.swift",
+    "line" : 314,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 39,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/BloodGlucose\/BloodGlucoseReadingContext.swift",
+    "line" : 327,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 41,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/BloodGlucose\/BloodGlucoseReadingContext.swift",
+    "line" : 340,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 46,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/BloodGlucose\/BloodGlucoseReadingContext.swift",
+    "line" : 353,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 41,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/BloodGlucose\/BloodGlucoseReadingContext.swift",
+    "line" : 374,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 49,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/BloodGlucose\/BloodGlucoseReading.swift",
+    "line" : 237,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 35,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/BloodGlucose\/BloodGlucoseReading.swift",
+    "line" : 262,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 33,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/BloodGlucose\/BloodGlucoseReading.swift",
+    "line" : 278,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 65,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/BloodGlucose\/BloodGlucoseReading.swift",
+    "line" : 296,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 57,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Models\/BloodGlucose\/BloodGlucoseReading.swift",
+    "line" : 312,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 35,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Devices\/InsulinTransmitter\/Models\/InsulinTransmitterConfig.swift",
+    "line" : 288,
+    "reason" : "Use `contains` instead",
+    "rule_id" : "reduce_boolean",
+    "severity" : "Error",
+    "type" : "Reduce Boolean"
+  },
+  {
+    "character" : 50,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Devices\/Common\/LillyBLEDevice.swift",
+    "line" : 243,
+    "reason" : "Initializing an optional variable with nil is redundant.",
+    "rule_id" : "redundant_optional_initialization",
+    "severity" : "Error",
+    "type" : "Redundant Optional Initialization"
+  },
+  {
+    "character" : 86,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDevice\/Devices\/InsulinTransmitter\/InsulinTransmitter.swift",
+    "line" : 3151,
+    "reason" : "Unused parameter \"error\" in a closure should be replaced with _.",
+    "rule_id" : "unused_closure_parameter",
+    "severity" : "Error",
+    "type" : "Unused Closure Parameter"
+  },
+  {
+    "character" : 60,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDeviceTests\/Devices\/Common\/LillyBLEDeviceDisableBluetoothTests.swift",
+    "line" : 134,
+    "reason" : "Unused parameter \"found\" in a closure should be replaced with _.",
+    "rule_id" : "unused_closure_parameter",
+    "severity" : "Error",
+    "type" : "Unused Closure Parameter"
+  },
+  {
+    "character" : 67,
+    "file" : "\/Users\/L031522\/Documents\/ProjectWS\/LillyDevices\/LillyDeviceTests\/Devices\/Common\/LillyBLEDeviceDisableBluetoothTests.swift",
+    "line" : 134,
+    "reason" : "Unused parameter \"errorOpt\" in a closure should be replaced with _.",
+    "rule_id" : "unused_closure_parameter",
+    "severity" : "Error",
+    "type" : "Unused Closure Parameter"
+  }
+]
