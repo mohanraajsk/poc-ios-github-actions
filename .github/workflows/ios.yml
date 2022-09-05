@@ -20,9 +20,6 @@ jobs:
     artifact_upload:
         needs: artifact
         uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOS_ci_summary.yml@main
-        with:
-          targetName: POC_GithuAction
-          workspaceName: POC_GithuAction.xcworkspace
 #    install-dependency:
 #        uses: EliLillyCo/Test_lilly_Shared_Repo/.github/workflows/ios_shared_action_install_dependency.yml@main
 #        with:
