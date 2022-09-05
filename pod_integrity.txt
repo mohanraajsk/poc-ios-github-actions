@@ -1,0 +1,5 @@
+=======CommandLine.arguments=====
+=======["DevOps/ci/script/check-pods-integrity.swift", "POC_GithuAction"]=====
+=======checkIntegrity=====
+checkIntegrity POC_GithuAction/Pods/ POC_GithuAction/Pods/Pods.xcodeproj/project.pbxproj POC_GithuAction/Podfile.lock
+Pods integrity check failed
