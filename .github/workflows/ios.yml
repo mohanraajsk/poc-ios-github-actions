@@ -12,8 +12,6 @@ on:
 
 
 jobs:
-    pod_integrity:
-        run: git diff --name-only remotes/origin/main..artifact_test > git_diff.txt
     artifact:
         uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBuildSharedAction.yml@main
         needs: pod_integrity
