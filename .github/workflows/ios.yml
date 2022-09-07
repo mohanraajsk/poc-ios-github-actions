@@ -14,7 +14,6 @@ on:
 jobs:
     artifact:
         uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBuildSharedAction.yml@main
-        needs: pod_integrity
         with:
           targetName: POC_GithuAction
           workspaceName: POC_GithuAction.xcworkspace
