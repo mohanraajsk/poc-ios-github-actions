@@ -12,7 +12,7 @@ on:
             
 jobs:
   LINTING-AND-UNIT-TEST:
-    uses: EliLillyCo/DIGH_SHARED_ACTIONS/.github/workflows/iOS_lint_unit-test.yml@main
+    uses: EliLillyCo/DIGH_SHARED_ACTIONS/.github/workflows/iOS_lint_unit-test.yml@task/DIGHCI-468-create-custom-action-in-shared-repository-workflow-to-parse-the-lint-unit-test-result
     with:
       targetName: LillyDevice
       workspaceName: LillyDevice.xcworkspace
@@ -21,5 +21,5 @@ jobs:
   
   CI-SUMMARY:
     needs: LINTING-AND-UNIT-TEST
-    uses: EliLillyCo/DIGH_SHARED_ACTIONS/.github/workflows/iOS_ci_summary.yml@main
+    uses: EliLillyCo/DIGH_SHARED_ACTIONS/.github/workflows/iOS_ci_summary.yml@task/DIGHCI-468-create-custom-action-in-shared-repository-workflow-to-parse-the-lint-unit-test-result
     secrets: inherit
