@@ -1,25 +1,23 @@
-name: iOS Lilly Device CI Lint, Unit Test and Summary
+name: CI/CD With generic reusable script with buils and test.
 
 on:
   pull_request:
-    branches: [ develop ]
+    branches: [ main ]
   workflow_dispatch:
     inputs:
         targetName:
             type: string
         workspaceName:
             type: string
-            
+
+
 jobs:
-  LINTING-AND-UNIT-TEST:
-    uses: EliLillyCo/DIGH_SHARED_ACTIONS/.github/workflows/iOS_lint_unit-test.yml@task/DIGHCI-468-create-custom-action-in-shared-repository-workflow-to-parse-the-lint-unit-test-result
-    with:
-      targetName: LillyDevice
-      workspaceName: LillyDevice.xcworkspace
-    secrets: inherit
-    if: always()
-  
-  CI-SUMMARY:
-    needs: LINTING-AND-UNIT-TEST
-    uses: EliLillyCo/DIGH_SHARED_ACTIONS/.github/workflows/iOS_ci_summary.yml@task/DIGHCI-468-create-custom-action-in-shared-repository-workflow-to-parse-the-lint-unit-test-result
-    secrets: inherit
+    artifact:
+        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBuildSharedAction.yml@main
+        with:
+          targetName: POC_GithuAction
+          workspaceName: POC_GithuAction.xcworkspace
+    artifact_upload:
+        needs: artifact
+        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOS_ci_summary.yml@main
+        secrets: inherit
