@@ -1,23 +1,25 @@
-name: CI/CD With generic reusable script with buils and test.
+name: iOS Lilly Device CI Lint, Unit Test and Summary
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ develop ]
   workflow_dispatch:
     inputs:
         targetName:
             type: string
         workspaceName:
             type: string
-
-
+            
 jobs:
-    artifact:
-        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBuildSharedAction.yml@main
-        with:
-          targetName: POC_GithuAction
-          workspaceName: POC_GithuAction.xcworkspace
-    artifact_upload:
-        needs: artifact
-        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOS_ci_summary.yml@main
-        secrets: inherit
+  LINTING-AND-UNIT-TEST:
+    uses: EliLillyCo/DIGH_SHARED_ACTIONS/.github/workflows/iOS_lint_unit-test.yml@main
+    with:
+      targetName: LillyDevice
+      workspaceName: LillyDevice.xcworkspace
+    secrets: inherit
+    if: always()
+  
+  CI-SUMMARY:
+    needs: LINTING-AND-UNIT-TEST
+    uses: EliLillyCo/DIGH_SHARED_ACTIONS/.github/workflows/iOS_ci_summary.yml@main
+    secrets: inherit
