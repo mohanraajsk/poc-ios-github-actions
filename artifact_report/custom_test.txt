@@ -1,25 +1,2 @@
-2833 tests total, 5 failed
-
-LillyDeviceTests.LillyBLEDeviceDisableBluetoothTests.testDisableBluetooth_NoPeripheralUUID_Scanning
-XCTAssertFalse failed
-
-
-
-LillyDeviceTests.LillyBLEDeviceDisableBluetoothTests.testDisableBluetooth_NoPeripheralUUID_Discovered
-XCTAssertFalse failed
-
-
-
-LillyDeviceTests.InsulinTransmitterTests_excalibur.testGetNewInjectorEvents_OneEvent
-XCTAssertEqual failed: ("Optional(<InjectorEvent sequenceNumber=1 baseEpochClockSync="(clockTime: 123456 == date: 2022-08-23T09:44:10Z)" baseTime="epoch:0, clockTime:120" eventCode="0x0001" eventMessage="" syncTime="nil" syncTimeZone="nil" >)") is not equal to ("Optional(<InjectorEvent sequenceNumber=1 baseEpochClockSync="(clockTime: 0 == date: 2022-08-21T23:26:33Z)" baseTime="epoch:0, clockTime:120" eventCode="0x0001" eventMessage="" syncTime="nil" syncTimeZone="nil" >)")
-
-
-
-LillyDeviceTests.InsulinTransmitterTests_excalibur.testSynchronizeClocks_disconnect_connect_synchronizeClocks
-Asynchronous wait failed: Exceeded timeout of 30 seconds, with unfulfilled expectations: "Completed disconnect".
-
-
-
-LillyDeviceTests.InsulinTransmitterTests_excalibur.testSynchronizeClocks_disconnect_connect_synchronizeClocks
-XCTAssertNil failed: "Error Domain=com.apple.XCTestErrorDomain Code=0 "(null)""
+2835 tests total, 0 failed
 

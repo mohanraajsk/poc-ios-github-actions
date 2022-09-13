@@ -1,45 +1,54 @@
-Done Linting. Found 39 violations.
+Done Linting. Found 40 violations.
 
-FileName: /Users/L031522/Documents/ProjectWS/LillyDevices/LillyTempoSmartButtonIntegrationTests/Utilities/TestVariables.swift
-Violations: Opening braces should be preceded by a single space and on the same line as the declaration.
-Line No: 166, 169
-FileName: /Users/L031522/Documents/ProjectWS/LillyDevices/LillyTempoSmartButtonIntegrationTests/LillyTempoSmartButtonIntegrationTests+Connection.swift
-Violations: Unused parameter "injector" in a closure should be replaced with _.
-Line No: 139
+FileName:" /Users/runner/work/PDS_DDRD_LillyDevice/PDS_DDRD_LillyDevice/LillyTempoSmartButtonIntegrationTests/LillyTempoSmartButtonIntegrationTests+Connection.swift
+Violations:" Unused parameter "injector" in a closure should be replaced with _.
+Line No:139
 
-FileName: /Users/L031522/Documents/ProjectWS/LillyDevices/LillyDevice/Models/Insulin/InsulinDose.swift
-Violations: Initializing an optional variable with nil is redundant.
-Line No: 325, 363, 403, 416, 429
-FileName: /Users/L031522/Documents/ProjectWS/LillyDevices/LillyDevice/Models/Insulin/InsulinDoseContext.swift
-Violations: Initializing an optional variable with nil is redundant.
-Line No: 227, 246, 261, 283, 327, 379, 392, 405, 420, 442
-FileName: /Users/L031522/Documents/ProjectWS/LillyDevices/LillyDevice/Devices/InsulinTransmitter/TempoSmartButtonTransmitter.swift
-Violations: Use `contains` instead
-Line No: 68
+FileName:" /Users/runner/work/PDS_DDRD_LillyDevice/PDS_DDRD_LillyDevice/LillyTempoSmartButtonIntegrationTests/Utilities/TestVariables.swift
+Violations:" Opening braces should be preceded by a single space and on the same line as the declaration.
+Line No:166,169
 
-FileName: /Users/L031522/Documents/ProjectWS/LillyDevices/LillyDevice/Models/BloodGlucose/BloodGlucoseReadingContext.swift
-Violations: Initializing an optional variable with nil is redundant.
-Line No: 247, 260, 273, 286, 299, 314, 327, 340, 353, 374
-FileName: /Users/L031522/Documents/ProjectWS/LillyDevices/LillyDevice/Models/BloodGlucose/BloodGlucoseReading.swift
-Violations: Initializing an optional variable with nil is redundant.
-Line No: 237, 262, 278, 296, 312
-FileName: /Users/L031522/Documents/ProjectWS/LillyDevices/LillyDevice/Devices/InsulinTransmitter/Models/InsulinTransmitterConfig.swift
-Violations: Use `contains` instead
-Line No: 288
+FileName:" /Users/runner/work/PDS_DDRD_LillyDevice/PDS_DDRD_LillyDevice/LillyDevice/Models/Insulin/InsulinDose.swift
+Violations:" Initializing an optional variable with nil is redundant.
+Line No:325,363,403,416,429
 
-FileName: /Users/L031522/Documents/ProjectWS/LillyDevices/LillyDevice/Devices/Common/LillyBLEDevice.swift
-Violations: Initializing an optional variable with nil is redundant.
-Line No: 243
+FileName:" /Users/runner/work/PDS_DDRD_LillyDevice/PDS_DDRD_LillyDevice/LillyDevice/Models/Insulin/InsulinDoseContext.swift
+Violations:" Initializing an optional variable with nil is redundant.
+Line No:227,246,261,283,327,379,392,405,420,442
 
-FileName: /Users/L031522/Documents/ProjectWS/LillyDevices/LillyDevice/Devices/InsulinTransmitter/InsulinTransmitter.swift
-Violations: Unused parameter "error" in a closure should be replaced with _.
-Line No: 3151
+FileName:" /Users/runner/work/PDS_DDRD_LillyDevice/PDS_DDRD_LillyDevice/LillyDevice/Models/BloodGlucose/BloodGlucoseReadingContext.swift
+Violations:" Initializing an optional variable with nil is redundant.
+Line No:247,260,273,286,299,314,327,340,353,374
 
-FileName: /Users/L031522/Documents/ProjectWS/LillyDevices/LillyDeviceTests/Devices/Common/LillyBLEDeviceDisableBluetoothTests.swift
-Violations: Unused parameter "found" in a closure should be replaced with _.
-Line No: 134
+FileName:" /Users/runner/work/PDS_DDRD_LillyDevice/PDS_DDRD_LillyDevice/LillyDevice/Models/BloodGlucose/BloodGlucoseReading.swift
+Violations:" Initializing an optional variable with nil is redundant.
+Line No:237,262,278,296,312
 
-FileName: /Users/L031522/Documents/ProjectWS/LillyDevices/LillyDeviceTests/Devices/Common/LillyBLEDeviceDisableBluetoothTests.swift
-Violations: Unused parameter "errorOpt" in a closure should be replaced with _.
-Line No: 134
+FileName:" /Users/runner/work/PDS_DDRD_LillyDevice/PDS_DDRD_LillyDevice/LillyDevice/Devices/InsulinTransmitter/TempoSmartButtonTransmitter.swift
+Violations:" Use `contains` instead
+Line No:69
+
+FileName:" /Users/runner/work/PDS_DDRD_LillyDevice/PDS_DDRD_LillyDevice/LillyDevice/Devices/InsulinTransmitter/Models/InsulinTransmitterConfig.swift
+Violations:" Use `contains` instead
+Line No:288
+
+FileName:" /Users/runner/work/PDS_DDRD_LillyDevice/PDS_DDRD_LillyDevice/LillyDevice/Devices/InsulinTransmitter/InsulinTransmitter.swift
+Violations:" Unused parameter "error" in a closure should be replaced with _.
+Line No:3106
+
+FileName:" /Users/runner/work/PDS_DDRD_LillyDevice/PDS_DDRD_LillyDevice/LillyDevice/Devices/Common/LillyBLEDevice.swift
+Violations:" Initializing an optional variable with nil is redundant.
+Line No:243
+
+FileName:" /Users/runner/work/PDS_DDRD_LillyDevice/PDS_DDRD_LillyDevice/LillyDeviceTests/Devices/InsulinTransmitter/InsulinTransmitterTests+InsulinDose.swift
+Violations:" Function body should span 100 lines or less excluding comments and whitespace: currently spans 103 lines
+Line No:1309
+
+FileName:" /Users/runner/work/PDS_DDRD_LillyDevice/PDS_DDRD_LillyDevice/LillyDeviceTests/Devices/Common/LillyBLEDeviceDisableBluetoothTests.swift
+Violations:" Unused parameter "found" in a closure should be replaced with _.
+Line No:134
+
+FileName:" /Users/runner/work/PDS_DDRD_LillyDevice/PDS_DDRD_LillyDevice/LillyDeviceTests/Devices/Common/LillyBLEDeviceDisableBluetoothTests.swift
+Violations:" Unused parameter "errorOpt" in a closure should be replaced with _.
+Line No:134
 
