@@ -12,7 +12,7 @@ on:
             
 jobs:
   LINTING-AND-UNIT-TEST:
-    uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBuildSharedAction.yml.yml@main
+    uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBuildSharedAction.yml@main
     with:
       targetName: LillyDevice
       workspaceName: LillyDevice.xcworkspace
