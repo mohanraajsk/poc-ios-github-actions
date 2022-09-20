@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v3
       
       - name: CInstall dependencies
-      - run: |
+        run: |
             brew install bazelisk
             bazel run //swift:create-extractor-pack
 
@@ -56,4 +56,4 @@ jobs:
       #     make release
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
+        uses: github/codeql-action/analyze@v2.10.5
