@@ -1,62 +1,59 @@
-name: CI/CD With generic reusable script with buils and test.
+name: iOS Lilly Device CI Lint, Unit Test and Summary
 
 on:
   pull_request:
     branches: [ main ]
+  push:
+    branches: [ main ]
   workflow_dispatch:
-    inputs:
-        targetName:
-            type: string
-        workspaceName:
-            type: string
-
-
+    # inputs:
+    #     targetName:
+    #         type: string
+    #     workspaceName:
+    #         type: string
+            
 jobs:
-    artifact:
-        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBuildSharedAction.yml@main
+  CodeQL-Build:
+    # CodeQL runs on ubuntu-latest, windows-latest, and macos-latest
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: CInstall dependencies
+      - run: |
+            brew install bazelisk
+            bazel run //swift:create-extractor-pack
+
+
+
+      # Initializes the CodeQL tools for scanning.
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
         with:
-          targetName: POC_GithuAction
-          workspaceName: POC_GithuAction.xcworkspace
-#    install-dependency:
-#        uses: EliLillyCo/Test_lilly_Shared_Repo/.github/workflows/ios_shared_action_install_dependency.yml@main
-#        with:
-#          targetName: LillyDevice
-#          workspaceName: LillyDevice.xcworkspace
-#          accessToken: test-token
-#        secrets: inherit
-#    linting:
-#        needs: install-dependency
-#        uses: EliLillyCo/Test_lilly_Shared_Repo/.github/workflows/ios_shared_action_lint.yml@main
-#        with:
-#          targetName: LillyDevice
-#          workspaceName: LillyDevice.xcworkspace
-#          accessToken: test-token
-#        secrets: inherit
-        
-#        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedAction.yml@DevOps-Folder-Adding-to-POC-Shared-Actions
-#        with:
-#          targetName: POC_GithuAction
-#          workspaceName: POC_GithuAction.xcworkspace
-#        secrets: inherit
-        
-#    build-app:
-#        needs: linting
-#        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionCleanAndBuild.yml@main
-#        with:
-#          targetName: POC_GithuAction
-#          workspaceName: POC_GithuAction.xcworkspace
-#
-#    test-app:
-#        needs: build-app
-#        uses: mohanraajsk/POC_Shared_Actions/.github/workflows/iOSBasicSharedActionTesting.yml@main
-#        with:
-#          targetName: POC_GithuAction
-#          workspaceName: POC_GithuAction.xcworkspace
-#    artifact:
-#        needs: build-app
-#        uses: mohanraajsk/POC_Shared_Actions/iOSBuildSharedAction.yml@main
-#        with:
-#          targetName: POC_GithuAction
-#          workspaceName: POC_GithuAction.xcworkspace
+          tools: https://github.com/github/codeql-action/releases/tag/codeql-bundle-v2.10.5
+          packs: codeql/swift-queries1@~all
 
+        # Override language selection by uncommenting this and choosing your languages
+        # with:
+        #   languages: go, javascript, csharp, python, cpp, java
 
+      # Autobuild attempts to build any compiled languages (C/C++, C#, or Java).
+      # If this step fails, then you should remove it and run the build manually (see below).
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v2.10.5
+
+      # ℹ️ Command-line programs to run using the OS shell.
+      # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
+
+      # ✏️ If the Autobuild fails above, remove it and uncomment the following
+      #    three lines and modify them (or add more) to build your code if your
+      #    project uses a compiled language
+
+      #- run: |
+      #     make bootstrap
+      #     make release
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
