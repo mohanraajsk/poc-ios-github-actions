@@ -34,7 +34,7 @@ jobs:
         uses: github/codeql-action/init@codeql-bundle-20220908
         with:
           tools: https://github.com/github/codeql-action/releases/tag/codeql-bundle-20220908
-          packs: codeql/swift-queries1@~all
+          # packs: codeql/swift-queries1@~all
 
         # Override language selection by uncommenting this and choosing your languages
         # with:
