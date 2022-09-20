@@ -23,6 +23,7 @@ jobs:
       
       - name: CInstall dependencies
         run: |
+            touch WORKSPACE
             brew install bazelisk
             bazel run //swift:create-extractor-pack
 
