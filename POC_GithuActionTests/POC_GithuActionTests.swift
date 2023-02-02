@@ -26,7 +26,7 @@ class POC_GithuActionTests: XCTestCase {
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
         XCTAssertTrue(testVariable == 10);
-        print("Test for POC")
+        print("Test for POC commit message")
     }
 
     func testPerformanceExample() throws {
