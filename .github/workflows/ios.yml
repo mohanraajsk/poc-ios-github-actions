@@ -2,7 +2,7 @@ name: iOS Lilly Device CI Lint, Unit Test and Summary
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ ma* ]
   workflow_dispatch:
     # inputs:
     #     targetName:
