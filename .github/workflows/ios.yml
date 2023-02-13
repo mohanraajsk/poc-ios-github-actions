@@ -12,6 +12,6 @@ on:
             
 jobs:
   PR-CHECK:
-    uses: mohanraajsk/POC_Shared_Actions/.github/workflows/prcheck.yml@main
+    uses: mohanraajsk/POC_Shared_Actions/.github/workflows/prcheck.yml@task/prcheck
     secrets: inherit
     if: always()
